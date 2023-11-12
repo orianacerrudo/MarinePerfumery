@@ -1,0 +1,29 @@
+.tablaCarrito {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffc3ec;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(255, 30, 161, 0.1);
+  padding: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+table tr {
+  background-color: #ff00a1;
+  color: white;
+}
+.tituloCarrito {
+  padding: 15px;
+  text-align: center;
+  font-size: 40px;
+  color: #ff00a1;
+}
+.tituloCarrito2 {
+  padding: 10px;
+  text-align: center;
+  font-size: 2rem;
+  color: #ff00a1;
+}

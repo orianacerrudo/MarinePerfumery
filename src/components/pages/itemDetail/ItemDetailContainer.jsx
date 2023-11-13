@@ -6,9 +6,14 @@ import Swal from "sweetalert2";
 //firebase
 import { db } from "../../../firebaseconfig";
 import { getDoc, collection, doc } from "firebase/firestore";
+// loader
+import { FadeLoader } from "react-spinners";
+import { Box } from "@mui/material";
 
 export const ItemDetailContainer = () => {
   const [productSelected, setProductSelected] = useState({});
+  // loader
+  const [loading, setLoading] = useState(true);
 
   // este id llega como string ""
   const { id } = useParams();
@@ -22,9 +27,13 @@ export const ItemDetailContainer = () => {
     let itemCollection = collection(db, "products");
     let refDoc = doc(itemCollection, id);
 
-    getDoc(refDoc).then((res) => {
-      setProductSelected({ id: res.id, ...res.data() });
-    });
+    getDoc(refDoc)
+      .then((res) => {
+        setProductSelected({ id: res.id, ...res.data() });
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, [id]);
 
   const onAdd = (cantidad) => {
@@ -44,10 +53,25 @@ export const ItemDetailContainer = () => {
   };
 
   return (
-    <ItemDetail
-      productSelected={productSelected}
-      onAdd={onAdd}
-      initial={cantidadTotal}
-    />
+    <>
+      {loading ? (
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+          }}
+        >
+          <FadeLoader loading={loading} color="#FF00A1" />
+        </Box>
+      ) : (
+        <ItemDetail
+          productSelected={productSelected}
+          onAdd={onAdd}
+          initial={cantidadTotal}
+        />
+      )}
+    </>
   );
 };

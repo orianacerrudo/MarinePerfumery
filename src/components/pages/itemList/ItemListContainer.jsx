@@ -7,6 +7,10 @@ import { useParams } from "react-router-dom";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from "../../../firebaseconfig";
 
+// loader
+import { FadeLoader } from "react-spinners";
+import { Box } from "@mui/material";
+
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
@@ -37,5 +41,22 @@ export const ItemListContainer = () => {
     //category name
   }, [categoryName]);
 
-  return <ItemList items={items} />;
+  return (
+    <>
+      {items.length === 0 ? (
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+          }}
+        >
+          <FadeLoader color="#FF00A1" />
+        </Box>
+      ) : (
+        <ItemList items={items} />
+      )}
+    </>
+  );
 };

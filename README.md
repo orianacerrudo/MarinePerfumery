@@ -22,7 +22,7 @@ Bienvenido a mi E-Commerce de perfumes, construida con ReactJS y Vite. Esta apli
 
 Este proyecto está listo en [Vercel](https://vercel.com/), a continuación puedes acceder al link:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://google.com)
+[![Deploy with Vercel](https://vercel.com/button)](https://marine-perfumery.vercel.app/)
 
 ## Configuración del proyecto
 

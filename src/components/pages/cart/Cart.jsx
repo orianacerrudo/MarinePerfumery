@@ -13,7 +13,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 export const Cart = ({
   cart,
-  vaciarCarrito,
+  vaciar,
   borrarProd,
   precioTotal,
   cantidadTotal,
@@ -79,11 +79,7 @@ export const Cart = ({
               </Button>
             </Link>
 
-            <Button
-              onClick={vaciarCarrito}
-              variant="contained"
-              color={"secondary"}
-            >
+            <Button onClick={vaciar} variant="contained" color={"secondary"}>
               Vaciar carrito
             </Button>
           </Box>

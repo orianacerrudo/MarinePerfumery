@@ -21,8 +21,13 @@ export const Checkout = () => {
     apellido: "",
     numero: "",
     email: "",
+    confirmEmail: "",
   });
   const [orderID, setOrderID] = useState(null);
+  // emails
+  const [emailError, setEmailError] = useState(false);
+  // campos vacios
+  const [formError, setFormError] = useState(false);
 
   //context
   const { cart, precioTotal, vaciarCarrito } = useContext(CartContext);
@@ -37,6 +42,17 @@ export const Checkout = () => {
   //funcion para enviar el formulario
   const handleSubmit = (ev) => {
     ev.preventDefault();
+    //confirmacion de emails al enviar el formulario
+    if (infoUsu.email !== infoUsu.confirmEmail) {
+      setEmailError(true);
+      return;
+    }
+    const camposVacios = Object.values(infoUsu).some((value) => value === "");
+
+    if (camposVacios || infoUsu.email !== infoUsu.confirmEmail) {
+      setFormError(true);
+      return;
+    }
 
     let order = {
       buyer: infoUsu,
@@ -144,9 +160,36 @@ export const Checkout = () => {
                   //
                   type="email"
                   name="email"
-                  label="Email"
+                  label="Correo electrónico"
                   onChange={handleChange}
+                  // email
+                  error={emailError}
+                  helperText={emailError && "Los correos no coinciden"}
                 />
+              </div>
+              <br />
+              <div style={{ backgroundColor: "#fff7fc" }}>
+                <TextField
+                  color="secondary"
+                  fullWidth
+                  id="outlined-basic"
+                  variant="outlined"
+                  //
+                  type="email"
+                  name="confirmEmail"
+                  label="Confirmar correo electrónico"
+                  onChange={handleChange}
+                  // email
+                  error={emailError}
+                  helperText={emailError && "Los correos no coinciden"}
+                />
+              </div>
+              <div>
+                {formError && (
+                  <p style={{ color: "#FF00A1", marginTop: "10px" }}>
+                    Por favor, no deje campos vacios.
+                  </p>
+                )}
               </div>
               <br />
               <div>

@@ -1,11 +1,34 @@
-# React + Vite
+# Marine perfumery E-Commerce App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenido a mi E-Commerce de perfumes, construida con ReactJS y Vite. Esta aplicación te permite explorar una amplia variedad de perfumes y realizar compras de manera sencilla.
 
-Currently, two official plugins are available:
+![React Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/200px-React-icon.svg.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# proyecto
-# PF-OrianaCerrudo
-# PF-OrianaCerrudo
+## Características principales
+
+- Catálogo de perfumes: Explora una amplia gama de perfumes con descripciones detalladas.
+- Carrito de compras: Agrega perfumes al carrito y realiza una compra segura.
+- Páginas de producto: Detalles completos de cada perfume, incluyendo imágenes, precio y descripción.
+
+## Tecnologías utilizadas
+
+- ReactJS.
+- React Router: Enrutamiento de navegación.
+- Firebase.
+- MUI.
+- SweetAlert2
+
+## Mi link a Vercel
+
+Este proyecto está listo en [Vercel](https://vercel.com/), a continuación puedes acceder al link:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://google.com)
+
+## Configuración del proyecto
+
+**Clona el repositorio de la siguiente manera:**
+
+```bash
+git clone https://github.com/orianacerrudo/PF-OrianaCerrudo.git
+
+```

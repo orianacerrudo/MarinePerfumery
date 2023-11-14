@@ -18,6 +18,9 @@ Bienvenido a mi E-Commerce de perfumes, construida con ReactJS y Vite. Esta apli
 - MUI.
 - SweetAlert2
 
+## Navegabilidad de la página
+![gif-reactjs](https://github.com/orianacerrudo/PF-OrianaCerrudo/assets/130574477/b6be320e-46c8-423f-9de4-2b48ba39cf13)
+
 ## Mi link a Vercel
 
 Este proyecto está listo en [Vercel](https://vercel.com/), a continuación puedes acceder al link:
